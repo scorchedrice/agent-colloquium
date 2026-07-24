@@ -20,8 +20,9 @@
     "test:marketplace": "node --test ./test/marketplace-install.test.mjs",
     "test:plugin": "node --import tsx --test ./test/plugin.integration.test.mjs ./test/native-artifact.integration.test.ts",
     "test:readme": "node --test ./test/readme.test.mjs",
+    "test:example": "node --test ./test/public-example.test.mjs",
     "typecheck": "tsc --noEmit",
-    "verify": "pnpm typecheck && pnpm test:engine && pnpm test:profile && pnpm test:profile-flow && pnpm test:local-llm && pnpm test:data-intake && pnpm test:marketplace && pnpm test:plugin && pnpm test:readme"
+    "verify": "pnpm typecheck && pnpm test:engine && pnpm test:profile && pnpm test:profile-flow && pnpm test:local-llm && pnpm test:data-intake && pnpm test:marketplace && pnpm test:plugin && pnpm test:readme && pnpm test:example"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",

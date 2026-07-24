@@ -20,7 +20,7 @@ dist/
 .codex/
 .tasks/
 AGENTS.md
-docs/개발-HARNESS.md
+docs/*-HARNESS.md
 docs/harness/
 docs/superpowers/
 tools/check-development-harness.mjs

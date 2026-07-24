@@ -132,9 +132,8 @@ The protocol writes only `artifact.json` and `report.md` under `.agent-runs/agen
 
 ## Included examples
 
-All included example materials are written in English and are explicitly bounded as public, illustrative records:
-
-- [Codex mock-engine walkthrough](docs/codex-mock-engine-walkthrough.md) — an executable deterministic protocol demonstration.
+- [IGZO thickness master's-decision conversation](examples/igzo-thickness-masters-decision/conversation.md) — the bounded public record of an actual user discussion.
+- [IGZO thickness master's-decision result](examples/igzo-thickness-masters-decision/result.md) — its conditional conclusion, evidence gaps, and approval boundary.
 
 ## Repository map
 
@@ -143,7 +142,7 @@ All included example materials are written in English and are explicitly bounded
 | [`plugins/agent-colloquium/`](plugins/agent-colloquium/) | Installable Codex plugin, skill, editable profiles, and protocol reference. |
 | [`src/`](src/) | TypeScript mock engine, artifact validation, data inventory, and route contracts. |
 | [`test/`](test/) | Product behavior and public-documentation checks. |
-| [`examples/`](examples/) | Public, reviewable English examples. |
+| [`examples/`](examples/) | Public, reviewable decision records. |
 | [`fixtures/`](fixtures/) | Safe inputs for deterministic tests and walkthroughs. |
 
 ## Verify the public product

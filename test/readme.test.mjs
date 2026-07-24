@@ -21,6 +21,6 @@ test("public README describes the Codex skill without overstating the current ru
   assert.match(readme, /Publication Editor/);
   assert.match(readme, /explicit user confirmation/i);
   assert.match(readme, /internalDataApproval/);
-  assert.doesNotMatch(readme, /docs\/개발-HARNESS\.md/);
+  assert.doesNotMatch(readme, /docs\/[^\s/]*-HARNESS\.md/);
   assert.match(readme, /pnpm verify/);
 });
