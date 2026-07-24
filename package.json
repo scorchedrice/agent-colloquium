@@ -1,0 +1,31 @@
+{
+  "name": "agent-colloquium",
+  "version": "0.0.0-development",
+  "private": true,
+  "description": "Development harness for the Agent Colloquium TypeScript engine",
+  "type": "module",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "colloquium:run": "tsx ./src/cli.ts",
+    "colloquium:validate-local-llm": "tsx ./src/validate-local-llm-cli.ts",
+    "colloquium:inspect-data": "tsx ./src/inspect-data-cli.ts",
+    "test:engine": "node --test ./test/cli.integration.test.mjs",
+    "test:profile": "node --import tsx --test ./test/profile.integration.test.ts",
+    "test:profile-flow": "node --import tsx --test ./test/profile-flow.integration.test.mjs",
+    "test:local-llm": "node --import tsx --test ./test/local-llm.integration.test.mjs",
+    "test:data-intake": "node --import tsx --test ./test/data-intake.integration.test.mjs",
+    "test:marketplace": "node --test ./test/marketplace-install.test.mjs",
+    "test:plugin": "node --import tsx --test ./test/plugin.integration.test.mjs ./test/native-artifact.integration.test.ts",
+    "test:readme": "node --test ./test/readme.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm typecheck && pnpm test:engine && pnpm test:profile && pnpm test:profile-flow && pnpm test:local-llm && pnpm test:data-intake && pnpm test:marketplace && pnpm test:plugin && pnpm test:readme"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

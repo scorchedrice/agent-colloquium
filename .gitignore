@@ -1,0 +1,41 @@
+# Node / package manager
+node_modules/
+.pnpm-store/
+.npm/
+
+# Build and coverage
+coverage/
+dist/
+*.tsbuildinfo
+
+# Run artifacts: potentially include research context and must not be committed by default
+.runs/
+.run/
+.agent-runs/
+.agent-colloquium/local-llm.json
+.agent-colloquium/execution-targets.json
+
+# Local development harness: intentionally not part of the public product repository
+.agents/skills/
+.codex/
+.tasks/
+AGENTS.md
+docs/개발-HARNESS.md
+docs/harness/
+docs/superpowers/
+tools/check-development-harness.mjs
+tools/check-development-harness.test.mjs
+tools/check-task-artifacts.mjs
+tools/check-task-artifacts.test.mjs
+
+# Local agent settings and credentials
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.claude/*.local.*
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

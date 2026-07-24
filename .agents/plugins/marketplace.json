@@ -1,0 +1,20 @@
+{
+  "name": "agent-colloquium",
+  "interface": {
+    "displayName": "Agent Colloquium"
+  },
+  "plugins": [
+    {
+      "name": "agent-colloquium",
+      "source": {
+        "source": "local",
+        "path": "./plugins/agent-colloquium"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

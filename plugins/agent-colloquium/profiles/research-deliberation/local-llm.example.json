@@ -1,0 +1,5 @@
+{
+  "protocol": "local-llm/manual-export/v1",
+  "transport": "manual-export",
+  "model": "replace-with-your-local-model-label"
+}

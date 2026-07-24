@@ -1,0 +1,5 @@
+{
+  "question": "How should a small team evaluate a generic sensor idea?",
+  "goals": ["produce a safe first experiment plan"],
+  "constraints": ["no external provider calls"]
+}
