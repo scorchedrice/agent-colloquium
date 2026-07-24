@@ -1,8 +1,24 @@
 # Agent Colloquium
 
-**Agent Colloquium** is a Codex-first, structured deliberation workflow for research, product, and technical decisions where one plausible answer is not enough. It separates independent viewpoints from later review so a conclusion retains evidence gaps, counterarguments, and unresolved disagreement.
+> A structured multi-agent deliberation workflow for scientific research, experimental planning, and technical decisions.
+
+**Agent Colloquium** is a Codex-first, open-source research workflow for turning an early idea into a reviewable decision. It separates independent viewpoints from later review so a conclusion retains evidence gaps, counterarguments, and unresolved disagreement.
 
 > **Status:** early implementation. This repository ships an installable Codex skill, a deterministic mock TypeScript engine for protocol checks, editable profiles, and public examples. It is not yet a provider-independent production runner.
+
+## Who this is for
+
+- Researchers and graduate students evaluating experimental ideas.
+- Engineers planning technical work under uncertainty.
+- Teams that want AI-assisted decisions with visible assumptions and evidence boundaries.
+
+## What it helps with
+
+- Scientific research questions and hypothesis evaluation.
+- Experimental planning and process-window analysis.
+- Multi-agent deliberation and structured technical review.
+- Preserving disagreement before a final recommendation.
+- Separating plausible ideas from verified evidence and approved actions.
 
 ## Beyond coding: research work with agentic tools
 
