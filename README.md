@@ -4,7 +4,7 @@
 
 **Agent Colloquium** is a Codex-first, open-source research workflow for turning an early idea into a reviewable decision. It separates independent viewpoints from later review so a conclusion retains evidence gaps, counterarguments, and unresolved disagreement.
 
-> **Status:** early implementation. This repository ships an installable Codex skill, a deterministic mock TypeScript engine for protocol checks, editable profiles, and public examples. It is not yet a provider-independent production runner.
+> **Status:** early implementation. This repository ships an installable Codex skill, a deterministic mock TypeScript engine for protocol checks, and editable profiles. It is not yet a provider-independent production runner.
 
 ## Who this is for
 
@@ -152,14 +152,6 @@ constraints:
 
 The protocol writes only `artifact.json` and `report.md` under `.agent-runs/agent-colloquium/<run-id>/`. It does not control equipment, upload data, publish, or send messages.
 
-## Included examples
-
-The IGZO example makes the difference between a direct response and a structured deliberation directly inspectable:
-
-- [Without Agent Colloquium](examples/igzo-thickness-masters-decision/without-skill.md) — the user-provided direct Codex answer, preserved as an unverified transcript.
-- [With Agent Colloquium: conversation](examples/igzo-thickness-masters-decision/conversation.md) — the bounded public record of the actual user discussion, independent roles, cross-examination, and synthesis.
-- [With Agent Colloquium: result](examples/igzo-thickness-masters-decision/result.md) — the conditional conclusion, evidence gaps, disagreements, next actions, and approval boundary.
-
 ## Repository map
 
 | Path | Responsibility |
@@ -167,7 +159,6 @@ The IGZO example makes the difference between a direct response and a structured
 | [`plugins/agent-colloquium/`](plugins/agent-colloquium/) | Installable Codex plugin, skill, editable profiles, and protocol reference. |
 | [`src/`](src/) | TypeScript mock engine, artifact validation, data inventory, and route contracts. |
 | [`test/`](test/) | Product behavior and public-documentation checks. |
-| [`examples/`](examples/) | Public, reviewable decision records. |
 | [`fixtures/`](fixtures/) | Safe inputs for deterministic tests and walkthroughs. |
 
 ## Verify the public product
