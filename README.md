@@ -4,6 +4,12 @@
 
 > **Status:** early implementation. This repository ships an installable Codex skill, a deterministic mock TypeScript engine for protocol checks, editable profiles, and public examples. It is not yet a provider-independent production runner.
 
+## Beyond coding: research work with agentic tools
+
+This project treats Codex as more than a coding assistant: it is a workspace for structured research reasoning. As agentic tools such as Codex and Claude expand into broader knowledge-work workflows, researchers need an interaction model that makes assumptions, evidence gaps, disagreement, and approval boundaries visible instead of hiding them inside a single persuasive answer.
+
+Agent Colloquium is designed to provide that usability layer. It helps a researcher turn an early idea into a reviewable record without confusing an answer, a citation, or a plausible plan with verified research or permission to act.
+
 ## How a deliberation works
 
 The workflow asks for a question, goals, and constraints. If files or numeric data are present, it makes the data-routing decision **before** any role sees the material. The research profile then keeps early roles independent, gives every reviewer the same normalized discovery bundle, and makes the Publication Editor a real gate before the final report.
@@ -132,8 +138,11 @@ The protocol writes only `artifact.json` and `report.md` under `.agent-runs/agen
 
 ## Included examples
 
-- [IGZO thickness master's-decision conversation](examples/igzo-thickness-masters-decision/conversation.md) — the bounded public record of an actual user discussion.
-- [IGZO thickness master's-decision result](examples/igzo-thickness-masters-decision/result.md) — its conditional conclusion, evidence gaps, and approval boundary.
+The IGZO example makes the difference between a direct response and a structured deliberation directly inspectable:
+
+- [Without Agent Colloquium](examples/igzo-thickness-masters-decision/without-skill.md) — the user-provided direct Codex answer, preserved as an unverified transcript.
+- [With Agent Colloquium: conversation](examples/igzo-thickness-masters-decision/conversation.md) — the bounded public record of the actual user discussion, independent roles, cross-examination, and synthesis.
+- [With Agent Colloquium: result](examples/igzo-thickness-masters-decision/result.md) — the conditional conclusion, evidence gaps, disagreements, next actions, and approval boundary.
 
 ## Repository map
 

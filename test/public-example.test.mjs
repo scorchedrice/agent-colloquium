@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const rootDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const exampleDirectory = path.join(rootDirectory, "examples", "igzo-thickness-masters-decision");
 const mockWalkthroughPath = path.join(rootDirectory, "docs", "codex-mock-engine-walkthrough.md");
-const requiredFiles = ["conversation.md", "result.md"];
+const requiredFiles = ["conversation.md", "result.md", "without-skill.md"];
 
 async function readExample(name) {
   return readFile(path.join(exampleDirectory, name), "utf8");
@@ -18,9 +18,9 @@ test("the public IGZO example records the complete bounded deliberation in chron
   const files = (await readdir(exampleDirectory)).sort();
   assert.deepEqual(files, requiredFiles);
 
-  const [conversation, result] = await Promise.all(requiredFiles.map(readExample));
+  const [conversation, result, withoutSkill] = await Promise.all(requiredFiles.map(readExample));
   const readme = await readFile(path.join(rootDirectory, "README.md"), "utf8");
-  const exampleText = `${conversation}\n${result}`;
+  const exampleText = `${conversation}\n${result}\n${withoutSkill}`;
 
   const stages = [
     /initial user question/i,
@@ -71,6 +71,27 @@ test("the public IGZO example records the complete bounded deliberation in chron
   assert.match(result, /reproducible/i);
   assert.match(result, /not (?:mere )?re-optimization/i);
   assert.match(result, /no literature verification or experiment occurred/i);
+  assert.match(withoutSkill, /user-provided/i);
+  assert.match(withoutSkill, /unverified/i);
+  assert.match(withoutSkill, /not authorization to run an experiment/i);
+  assert.match(withoutSkill, /\[58 nm\]\(https:\/\/www\.sciencedirect\.com\/science\/article\/pii\/S0749603613002620\)/i);
+  assert.match(withoutSkill, /\[130 nm\]\(https:\/\/doi\.org\/10\.1016\/j\.surfcoat\.2010\.07\.036\)/i);
+  assert.match(withoutSkill, /3\s*(?:–|-)\s*50\s*nm/i);
+  assert.match(withoutSkill, /mobility.*12\s*to\s*0\.1\s*cm²\/V·s/i);
+  assert.match(withoutSkill, /reduc(?:e|tion).*30\s*(?:–|-)\s*50%/i);
+  assert.match(withoutSkill, /90%.*reference mobility/i);
+  assert.match(result, /^## Comparison with the direct answer$/m);
+  assert.match(result, /direct Codex answer without the skill/i);
+  assert.match(result, /Direct answer.*literature-led.*prescriptive/i);
+  assert.match(result, /specific ranges.*criteria.*citations/i);
+  assert.match(result, /claims.*fit.*unverified in this record/i);
+  assert.match(result, /Colloquium.*supplied context.*unverified/i);
+  assert.match(result, /independent roles.*cross-examination.*preserved disagreements/i);
+  assert.match(result, /explicit human-approval boundary/i);
+  assert.match(result, /does not itself supply literature validation or a calibrated experiment/i);
+  assert.match(result, /complementary/i);
+  assert.match(result, /literature review.*plan concrete/i);
+  assert.match(result, /decide what must be verified and controlled before acting/i);
   for (const decision of [
     "needs-evidence.*causal .*mechanism.*source or measurement is absent",
     "survives.*falsifiable pilot.*compatible with the stated constraints",
@@ -107,6 +128,7 @@ test("the public IGZO example records the complete bounded deliberation in chron
 
   assert.match(readme, /examples\/igzo-thickness-masters-decision\/conversation\.md/);
   assert.match(readme, /examples\/igzo-thickness-masters-decision\/result\.md/);
+  assert.match(readme, /examples\/igzo-thickness-masters-decision\/without-skill\.md/);
   assert.doesNotMatch(readme, /\bBACK\b/i);
   assert.doesNotMatch(readme, /external[- ]research[- ]group/i);
   assert.doesNotMatch(readme, /back-research-group-materials-intelligence/i);

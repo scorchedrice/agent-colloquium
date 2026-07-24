@@ -37,3 +37,14 @@ Human approval required before external characterization.
 Human approval required before data upload.
 
 Human approval required before publication.
+
+## Comparison with the direct answer
+
+See the [direct Codex answer without the skill](without-skill.md) for the user-provided, unverified comparison record.
+
+| Output | Character | Limits in this record |
+| --- | --- | --- |
+| Direct answer without the skill | Literature-led and prescriptive, with specific ranges, criteria, and citations. | Its claims and fit are unverified in this record. |
+| Colloquium | Treats supplied context as unverified, using independent roles, cross-examination, preserved disagreements, and an explicit human-approval boundary. | It does not itself supply literature validation or a calibrated experiment. |
+
+The two outputs are complementary: a literature review can make a plan concrete, while the Colloquium helps decide what must be verified and controlled before acting.
